@@ -1,5 +1,6 @@
-import { Box, Paper } from "@mui/material";
+import { Box, Paper, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import SignInCard from "../components/SignInCard";
 
 const SignIn = () => {
   return (
@@ -8,6 +9,7 @@ const SignIn = () => {
         size={{ xs: 0, md: 6 }}
         sx={{
           height: "100vh",
+          overflow: "hidden",
         }}
       >
         <Paper
@@ -19,7 +21,7 @@ const SignIn = () => {
         >
           <Box
             component="img"
-            src="/assets/hero-rabbit-img.png"
+            src="src/assets/hero-rabbit-img.png"
             sx={{
               width: "284px",
               height: "auto",
@@ -29,7 +31,7 @@ const SignIn = () => {
           />
           <Box
             component="img"
-            src="/assets/hero-stats-img.png"
+            src="src/assets/hero-stats-img.png"
             sx={{
               width: "29rem",
               height: "auto",
@@ -42,7 +44,24 @@ const SignIn = () => {
           />
         </Paper>
       </Grid>
-      <Grid size={{ xs: 12, md: 6 }}>Item 2</Grid>
+      <Grid
+        size={{ xs: 12, md: 6 }}
+        sx={{
+          padding: {
+            xs: "1rem",
+            md: "1.5rem",
+            alignContent: "center",
+          },
+        }}
+      >
+        <Stack spacing={4} sx={{ justifyContent: "center", alignItems: "center" }}>
+          <SignInCard />
+          <Typography variant="body1">
+            By signing up you agree to the{" "}
+            <span style={{ fontWeight: "bold" }}>Privacy Policy.</span>
+          </Typography>
+        </Stack>
+      </Grid>
     </Grid>
   );
 };
