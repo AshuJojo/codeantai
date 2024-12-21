@@ -27,6 +27,7 @@ const SignIn = () => {
               height: "auto",
               position: "absolute",
               bottom: 0,
+              left: 0,
             }}
           />
           <Box
