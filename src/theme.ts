@@ -21,7 +21,7 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFFFFF",
-          border: '1px solid #E9EAEB',
+          border: "1px solid #E9EAEB",
           borderRadius: "12px",
         },
       },
@@ -37,12 +37,17 @@ const theme = createTheme({
     MuiToggleButton: {
       styleOverrides: {
         root: ({ theme }) => ({
+          borderRadius: "8px",
           "&.Mui-selected": {
+            borderRadius: "8px",
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.primary.contrastText,
             "&:hover": {
               backgroundColor: theme.palette.primary.dark,
             },
+          },
+          "&.MuiToggleButtonGroup-lastButton": {
+            marginLeft: "-10px",
           },
           color: "#414651",
         }),
@@ -54,10 +59,10 @@ const theme = createTheme({
       },
       styleOverrides: {
         outlined: {
-          fontSize: '1rem',
+          fontSize: "1rem",
           fontWeight: 600,
-          textTransform: 'none',
-          lineHeight: '24px',
+          textTransform: "none",
+          lineHeight: "24px",
           border: "1px solid #D8DAE5",
           color: "black",
           borderRadius: 8,
@@ -94,8 +99,8 @@ const theme = createTheme({
     },
     body1: {
       fontWeight: 1,
-      color: '#181D27',
-    }
+      color: "#181D27",
+    },
   },
 });
 
