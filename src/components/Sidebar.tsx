@@ -1,5 +1,5 @@
-import { Box, MenuItem, Select, Stack } from "@mui/material";
-
+import { Box, MenuItem, MenuList, Select, Stack } from "@mui/material";
+import StyledMenuItem from "./StyledMenu";
 
 const Sidebar = () => {
   return (
@@ -27,6 +27,13 @@ const Sidebar = () => {
             <MenuItem value={1}>Add User</MenuItem>
           </Select>
         </Stack>
+
+        {/* Menu */}
+        <MenuList sx={{ width: "100%" }}>
+          <StyledMenuItem active={true} sx={{ borderRadius: 2 }}>
+            Repositories
+          </StyledMenuItem>
+        </MenuList>
       </Stack>
     </Stack>
   );
