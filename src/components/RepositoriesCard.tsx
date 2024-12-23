@@ -52,7 +52,13 @@ const RepositoriesCard = () => {
   }, []);
 
   return (
-    <Paper sx={{ height: "100%", maxHeight: "93vh" }}>
+    <Paper
+      sx={{
+        height: "100%",
+        maxHeight: "93vh",
+        border: { xs: 0, md: "1px solid #E9EAEB" },
+      }}
+    >
       <Stack sx={{ height: "100%" }}>
         {/* Content */}
         <Stack sx={{ borderBottom: "1px solid #E9EAEB" }}>

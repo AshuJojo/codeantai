@@ -37,7 +37,7 @@ const Sidebar = () => {
           display: "flex",
           flexDirection: "column",
           flexGrow: 1,
-          justifyContent: "space-between",
+          justifyContent: { xs: "start", md: "space-between" },
           p: 0,
         }}
       >
@@ -119,10 +119,10 @@ const Sidebar = () => {
       direction="column"
       sx={{
         bgcolor: "white",
-        height: { xs: "64px", md: "100vh" },
+        height: { xs: "100%", md: "100vh" },
         px: { xs: 0, md: 2 },
         py: { xs: 0, md: 3 },
-        borderRight: "1px solid #E9EAEB",
+        borderRight: { xs: "0", md: "1px solid #E9EAEB" },
       }}
     >
       <Stack
@@ -141,7 +141,8 @@ const Sidebar = () => {
             width: "100%",
             justifyContent: "space-between",
             alignItems: "center",
-            p: { xs: 2, md: 0 },
+            py: { xs: 2, md: 0 },
+            px: { xs: 2, md: 0 },
           }}
         >
           {/* Logo */}
@@ -181,7 +182,7 @@ const Sidebar = () => {
               spacing={2}
               sx={{
                 width: "100%",
-                height: { xs: "450px", md: "100%" },
+                height: { xs: "430px", md: "100%" },
                 position: "absolute",
                 bgcolor: "white",
                 px: { xs: 2, md: 0 },
@@ -211,7 +212,7 @@ const Sidebar = () => {
                   height: "100vh",
                   bgcolor: alpha("#000000", 0.5),
                   position: "absolute",
-                  top: 0,
+                  top: 10,
                   bottom: 0,
                   left: 0,
                   right: 0,
