@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid2";
-import Sidebar from "../components/Sidebar";
 import RepositoriesCard from "../components/RepositoriesCard";
+import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
   return (

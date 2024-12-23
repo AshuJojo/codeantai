@@ -11,11 +11,14 @@ import { FiSearch } from "react-icons/fi";
 import { IoAdd } from "react-icons/io5";
 import { LuRefreshCw } from "react-icons/lu";
 import Repository from "../types/Respository";
-import SearchInput from "./SearchInput";
 import RepositoryItem from "./RepositoryItem";
+import SearchInput from "./SearchInput";
 
 const RepositoriesCard = () => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [filteredRepositories, setFilteredRepositories] = useState<
+    Repository[]
+  >([]);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -30,12 +33,17 @@ const RepositoriesCard = () => {
       const data: Repository[] = await response.json();
       console.log("data", data);
       setRepositories(data);
+      setFilteredRepositories(data);
     } catch (err: unknown) {
       if (err instanceof Error) setError(err.message);
       else setError("Something went wrong!");
     } finally {
       setLoading(false);
     }
+  };
+
+  const updateFilteredRepository = (repositoriesArr: Repository[]) => {
+    setFilteredRepositories(repositoriesArr);
   };
 
   useEffect(() => {
@@ -77,6 +85,8 @@ const RepositoriesCard = () => {
             {/* Search Box */}
             <Box>
               <SearchInput
+                allRepositories={repositories}
+                updateFilteredRepositories={updateFilteredRepository}
                 icon={<FiSearch size={24} style={{ marginRight: "8px" }} />}
                 sx={{
                   minWidth: "30%",
@@ -109,9 +119,13 @@ const RepositoriesCard = () => {
               {error}
             </Typography>
           )}
-          {repositories &&
-            repositories.map((repository, idx) => (
-              <RepositoryItem key={idx} repository={repository} />
+          {filteredRepositories &&
+            filteredRepositories.map((repository, idx) => (
+              <RepositoryItem
+                key={idx}
+                repository={repository}
+                isLast={idx === repositories.length - 1}
+              />
             ))}
         </Stack>
       </Stack>

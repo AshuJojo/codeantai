@@ -1,14 +1,15 @@
-import { alpha, Chip, Stack, Typography, useTheme } from "@mui/material";
-import Repository from "../types/Respository";
+import { Chip, Stack, Typography, useTheme } from "@mui/material";
+import { formatDistance } from "date-fns";
 import { GoDotFill } from "react-icons/go";
 import { HiOutlineCircleStack } from "react-icons/hi2";
-import { formatDistance } from "date-fns";
+import Repository from "../types/Respository";
 
 interface RepositoryItemProps {
   repository: Repository;
+  isLast: boolean;
 }
 
-const RepositoryItem = ({ repository }: RepositoryItemProps) => {
+const RepositoryItem = ({ repository, isLast }: RepositoryItemProps) => {
   const theme = useTheme();
 
   const getRelativeTimeFromToday = (dateStr: string) => {
@@ -19,7 +20,10 @@ const RepositoryItem = ({ repository }: RepositoryItemProps) => {
   };
 
   return (
-    <Stack spacing={1.5} sx={{ p: 3, borderBottom: "1px solid #D5D7DA" }}>
+    <Stack
+      spacing={1.5}
+      sx={{ p: 3, borderBottom: isLast ? "" : "1px solid #D5D7DA" }}
+    >
       <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
         <Typography variant="subtitle2">{repository.repositoryName}</Typography>
         <Chip
