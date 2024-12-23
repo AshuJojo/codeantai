@@ -11,6 +11,7 @@ import { BsTelephone } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
 import StyledMenuItem from "./StyledMenu";
+import { Link } from "react-router";
 
 const Sidebar = () => {
   return (
@@ -33,8 +34,16 @@ const Sidebar = () => {
           spacing={2.5}
           sx={{ px: 0.5, width: "100%", alignItems: "start" }}
         >
-          <Box component="img" src="/logo-long.svg" height={32} width="auto" />
+          <Link to={"/"}>
+            <Box
+              component="img"
+              src="/logo-long.svg"
+              height={32}
+              width="auto"
+            />
+          </Link>
           <Select
+            value={0}
             defaultValue={0}
             size="small"
             sx={{ textAlign: "start", borderRadius: 2 }}
