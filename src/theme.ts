@@ -1,4 +1,4 @@
-import { createTheme } from "@mui/material/styles";
+import { alpha, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -83,6 +83,26 @@ const theme = createTheme({
         },
       },
     },
+    MuiChip: {
+      defaultProps: {
+        variant: "outlined",
+      },
+      styleOverrides: {
+        outlined: ({ theme }) => ({
+          color: "primary.dark",
+          backgroundColor: alpha(theme.palette.primary.main, 0.025),
+          padding: "2px 10px 2px 8px",
+          textTransform: "capitalize",
+          fontWeight: 400,
+
+          "& span": {
+            padding: 0,
+            margin: "auto auto",
+            textAlign: "center",
+          },
+        }),
+      },
+    },
   },
   typography: {
     allVariants: {
@@ -108,7 +128,7 @@ const theme = createTheme({
     },
     subtitle2: {
       fontSize: "1.25rem",
-      fontWeight: 500,
+      fontWeight: 600,
     },
     body1: {
       fontSize: "1rem",
