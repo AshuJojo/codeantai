@@ -58,9 +58,17 @@ const theme = createTheme({
         variant: "contained",
       },
       styleOverrides: {
+        contained: {
+          height: "fit-content",
+          textTransform: "none",
+          borderRadius: 8,
+          "span.MuiButton-icon": {
+            size: 24,
+          },
+        },
         outlined: {
+          height: "fit-content",
           fontSize: "1rem",
-          fontWeight: 600,
           textTransform: "none",
           lineHeight: "24px",
           border: "1px solid #D8DAE5",
@@ -70,8 +78,7 @@ const theme = createTheme({
             backgroundColor: "#f2f2f2",
           },
           "span.MuiButton-icon": {
-            width: "24px",
-            height: "24px",
+            size: 24,
           },
         },
       },
@@ -87,6 +94,12 @@ const theme = createTheme({
       lineHeight: "3rem",
       fontWeight: 600,
     },
+    h2: {
+      fontSize: "1.5rem",
+      lineHeight: "2rem",
+      fontWeight: 600,
+      textAlign: "start",
+    },
     subtitle1: {
       fontSize: "1.25rem",
       fontWeight: 600,
@@ -98,8 +111,15 @@ const theme = createTheme({
       fontWeight: 500,
     },
     body1: {
+      fontSize: "1rem",
       fontWeight: 1,
       color: "#414651",
+    },
+    caption: {
+      fontSize: "0.875rem",
+      fontWeight: 1,
+      color: "#414651",
+      textAlign: "start",
     },
   },
 });

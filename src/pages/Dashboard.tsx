@@ -1,5 +1,6 @@
 import Grid from "@mui/material/Grid2";
 import Sidebar from "../components/Sidebar";
+import RepositoriesCard from "../components/RepositoriesCard";
 
 const Dashboard = () => {
   return (
@@ -7,7 +8,9 @@ const Dashboard = () => {
       <Grid size={2}>
         <Sidebar />
       </Grid>
-      <Grid size={10}>Content</Grid>
+      <Grid size={10} p={3}>
+        <RepositoriesCard />
+      </Grid>
     </Grid>
   );
 };

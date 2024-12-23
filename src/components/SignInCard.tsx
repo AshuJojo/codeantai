@@ -105,7 +105,12 @@ const SignInCard = () => {
             <Button
               key={idx}
               variant="outlined"
-              sx={{ width: "100%", maxWidth: "27.875rem", py: 1 }}
+              sx={{
+                width: "100%",
+                maxWidth: "27.875rem",
+                py: 1,
+                fontWeight: 600,
+              }}
               startIcon={btn.icon}
               onClick={handleBtnClick}
             >
@@ -117,7 +122,12 @@ const SignInCard = () => {
             <Button
               key={idx}
               variant="outlined"
-              sx={{ width: "100%", maxWidth: "27.875rem", py: 1 }}
+              sx={{
+                width: "100%",
+                maxWidth: "27.875rem",
+                py: 1,
+                fontWeight: 600,
+              }}
               startIcon={btn.icon}
               onClick={handleBtnClick}
             >
