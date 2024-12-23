@@ -8,9 +8,9 @@ const StyledMenuItem = styled(MenuItem)<StyledMenuItemProps>(
   ({ theme, active }) => ({
     width: "100%",
     backgroundColor: active ? theme.palette.primary.main : "transparent",
-    color: active
-      ? theme.palette.primary.contrastText
-      : theme.palette.text.primary,
+    color: active ? "white" : "black",
+    borderRadius: 8,
+    padding: "10px 14px 10px 14px",
     "&:hover": {
       backgroundColor: theme.palette.primary.light,
     },
@@ -18,4 +18,3 @@ const StyledMenuItem = styled(MenuItem)<StyledMenuItemProps>(
 );
 
 export default StyledMenuItem;
-;

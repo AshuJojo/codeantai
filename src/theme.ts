@@ -99,7 +99,7 @@ const theme = createTheme({
     },
     body1: {
       fontWeight: 1,
-      color: "#181D27",
+      color: "#414651",
     },
   },
 });
