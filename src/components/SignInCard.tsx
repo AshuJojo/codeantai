@@ -9,43 +9,44 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import GithubLogo from "/src/assets/github-logo.svg?react";
-import BitBucketLogo from "/src/assets/bitbucket-logo.svg?react";
+import { useNavigate } from "react-router";
 import AzureDevopsLogo from "/src/assets/azure-devops-logo.svg?react";
+import BitBucketLogo from "/src/assets/bitbucket-logo.svg?react";
+import GithubLogo from "/src/assets/github-logo.svg?react";
 import GitlabLogo from "/src/assets/gitlab-logo.svg?react";
 import SSOLogo from "/src/assets/sso-logo.svg?react";
-import { useNavigate } from "react-router";
+
+const sassBtns = [
+  {
+    icon: <GithubLogo />,
+    name: "Sign in with Github",
+  },
+  {
+    icon: <BitBucketLogo />,
+    name: "Sign in with Bitbucket",
+  },
+  {
+    icon: <AzureDevopsLogo />,
+    name: "Sign in with Azure Devops",
+  },
+  {
+    icon: <GitlabLogo />,
+    name: "Sign in with GitLab",
+  },
+];
+
+const selfHostedBtns = [
+  {
+    icon: <GitlabLogo />,
+    name: "Self Hosted GitLab",
+  },
+  {
+    icon: <SSOLogo />,
+    name: "Sign in with SSO",
+  },
+];
 
 const SignInCard = () => {
-  const sassBtns = [
-    {
-      icon: <GithubLogo />,
-      name: "Sign in with Github",
-    },
-    {
-      icon: <BitBucketLogo />,
-      name: "Sign in with Bitbucket",
-    },
-    {
-      icon: <AzureDevopsLogo />,
-      name: "Sign in with Azure Devops",
-    },
-    {
-      icon: <GitlabLogo />,
-      name: "Sign in with GitLab",
-    },
-  ];
-  const selfHostedBtns = [
-    {
-      icon: <GitlabLogo />,
-      name: "Self Hosted GitLab",
-    },
-    {
-      icon: <SSOLogo />,
-      name: "Sign in with SSO",
-    },
-  ];
-
   const [selectedTab, setSelectedTab] = useState<string>("sass");
   const navigate = useNavigate();
 
