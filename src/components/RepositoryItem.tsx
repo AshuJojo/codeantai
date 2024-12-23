@@ -13,7 +13,7 @@ const RepositoryItem = ({ repository }: RepositoryItemProps) => {
           <Typography variant="subtitle2">
             {repository.repositoryName}
           </Typography>
-          <Badge>{repository.visiblity}</Badge>
+          <Badge>{repository.visibility}</Badge>
         </Stack>
       </Stack>
     </Stack>

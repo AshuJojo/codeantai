@@ -1,6 +1,6 @@
 interface Repository {
   repositoryName: string;
-  visiblity: string;
+  visibility: string;
   language: string;
   size: number;
   last_updated: string;
