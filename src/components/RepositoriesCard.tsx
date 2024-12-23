@@ -1,16 +1,39 @@
-import {
-    Box,
-    Button,
-    Paper,
-    Stack,
-    Typography
-} from "@mui/material";
+import { Box, Button, Paper, Stack, Typography } from "@mui/material";
 import { FiSearch } from "react-icons/fi";
 import { IoAdd } from "react-icons/io5";
 import { LuRefreshCw } from "react-icons/lu";
 import SearchInput from "./SearchInput";
+import Repository from "../types/Respository";
+import { useEffect, useState } from "react";
 
 const RepositoriesCard = () => {
+  const [repositories, setRepositories] = useState<Repository[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch("/data/data.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+
+        const data: Repository[] = await response.json();
+        console.log('data', data);
+        setRepositories(data);
+      } catch (err: unknown) {
+        if (err instanceof Error) setError(err.message);
+        else setError("Something went wrong!");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <Paper sx={{ height: "100%" }}>
       {/* Content */}
