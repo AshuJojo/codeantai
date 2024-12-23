@@ -22,6 +22,7 @@ const Sidebar = () => {
         height: "100vh",
         px: 2,
         py: 3,
+        borderRight: "1px solid #E9EAEB",
       }}
     >
       <Stack
