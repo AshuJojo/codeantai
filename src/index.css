@@ -12,3 +12,7 @@ body {
 #root {
     background-color: #fafafa;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}

@@ -45,7 +45,7 @@ const RepositoriesCard = () => {
   }, []);
 
   return (
-    <Paper sx={{ height: "100%" }}>
+    <Paper sx={{ height: "100%", maxHeight: "93vh" }}>
       <Stack sx={{ height: "100%" }}>
         {/* Content */}
         <Stack sx={{ borderBottom: "1px solid #E9EAEB" }}>
@@ -89,7 +89,7 @@ const RepositoriesCard = () => {
             </Box>
           </Stack>
         </Stack>
-        <Stack sx={{ flexGrow: 1 }}>
+        <Stack sx={{ flexGrow: 1, overflowY: "scroll" }}>
           {loading && (
             <CircularProgress
               style={{ display: "block", margin: "auto auto" }}
