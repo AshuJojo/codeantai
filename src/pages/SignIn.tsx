@@ -55,7 +55,14 @@ const SignIn = () => {
           },
         }}
       >
-        <Stack spacing={4} sx={{ justifyContent: "center", alignItems: "center" }}>
+        <Stack
+          spacing={4}
+          sx={{
+            justifyContent: "center",
+            alignItems: "center",
+            textAlign: "center",
+          }}
+        >
           <SignInCard />
           <Typography variant="body1">
             By signing up you agree to the{" "}

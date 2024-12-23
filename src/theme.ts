@@ -1,4 +1,4 @@
-import { alpha, createTheme } from "@mui/material/styles";
+import { alpha, createTheme, responsiveFontSizes } from "@mui/material/styles";
 
 const theme = createTheme({
   palette: {
@@ -107,23 +107,22 @@ const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily: "Inter, sans-serif",
-      textAlign: "center",
     },
     h1: {
       fontSize: "2rem",
-      lineHeight: "3rem",
+      lineHeight: 3,
       fontWeight: 600,
     },
     h2: {
       fontSize: "1.5rem",
-      lineHeight: "2rem",
+      lineHeight: 2,
       fontWeight: 600,
       textAlign: "start",
     },
     subtitle1: {
       fontSize: "1.25rem",
       fontWeight: 600,
-      lineHeight: "1.75rem",
+      lineHeight: 1.75,
       textTransform: "none",
     },
     subtitle2: {
@@ -142,6 +141,15 @@ const theme = createTheme({
       textAlign: "start",
     },
   },
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1300,
+      xl: 1536,
+    },
+  },
 });
 
-export default theme;
+export default responsiveFontSizes(theme);

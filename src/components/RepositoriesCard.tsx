@@ -31,7 +31,6 @@ const RepositoriesCard = () => {
       }
 
       const data: Repository[] = await response.json();
-      console.log("data", data);
       setRepositories(data);
       setFilteredRepositories(data);
     } catch (err: unknown) {
