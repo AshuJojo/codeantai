@@ -18,7 +18,7 @@ import StyledMenuItem from "./StyledMenu";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-const Sidebar = () => {
+const Navbar = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
@@ -226,4 +226,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Navbar;

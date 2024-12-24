@@ -55,8 +55,9 @@ const RepositoriesCard = () => {
     <Paper
       sx={{
         height: "100%",
-        maxHeight: "93vh",
+        maxHeight: "95vh",
         border: { xs: 0, md: "1px solid #E9EAEB" },
+        overflow: 'hidden'
       }}
     >
       <Stack sx={{ height: "100%" }}>
