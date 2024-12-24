@@ -1,6 +1,7 @@
 import { Box, Paper, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import SignInCard from "../components/SignInCard";
+import IMAGES from "../assets/Image";
 
 /**
  * SignIn component renders the sign-in page layout.
@@ -27,7 +28,7 @@ const SignIn = (): JSX.Element => {
         >
           <Box
             component="img"
-            src="src/assets/hero-rabbit-img.png"
+            src={IMAGES.heroRabbitImg}
             sx={{
               width: "284px",
               height: "auto",
@@ -38,7 +39,7 @@ const SignIn = (): JSX.Element => {
           />
           <Box
             component="img"
-            src="src/assets/hero-stats-img.png"
+            src={IMAGES.heroStatsImg}
             sx={{
               width: "29rem",
               height: "auto",

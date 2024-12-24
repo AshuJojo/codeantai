@@ -63,11 +63,10 @@ const SignInCard = (): JSX.Element => {
 
   /**
    * Handles the tab change event.
-   * @param {React.MouseEvent<HTMLElement>} event - The event object.
    * @param {string | null} newTab - The new tab value.
    */
   const handleTabChange = (
-    event: React.MouseEvent<HTMLElement>,
+    _event: React.MouseEvent<HTMLElement>,
     newTab: string | null
   ) => {
     if (newTab !== null) {
