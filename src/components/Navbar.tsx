@@ -18,11 +18,20 @@ import StyledMenuItem from "./StyledMenu";
 import { useState } from "react";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-const Navbar = () => {
+/**
+ * Sidebar component that displays the Sidebar layout.
+ * @component
+ * @returns {JSX.Element} The rendered Sidebar layout.
+ */
+const Navbar = (): JSX.Element => {
+  // use the theme and media query hooks for checking the screen size
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+
+  // state for toggling the menu on small screen
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
+  // function to handle the menu toggle
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);
   };

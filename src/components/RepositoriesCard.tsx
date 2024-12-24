@@ -14,7 +14,12 @@ import Repository from "../types/Repository";
 import RepositoryItem from "./RepositoryItem";
 import SearchInput from "./SearchInput";
 
-const RepositoriesCard = () => {
+/**
+ * A card component that displays a list of repositories.
+ *
+ * @returns {JSX.Element} A card component.
+ */
+const RepositoriesCard = (): JSX.Element => {
   const [repositories, setRepositories] = useState<Repository[]>([]);
   const [filteredRepositories, setFilteredRepositories] = useState<
     Repository[]
@@ -22,29 +27,47 @@ const RepositoriesCard = () => {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
+  /**
+   * Fetches the data asynchronosly.
+   */
   const fetchData = async () => {
+    //  Set loading to true
     setLoading(true);
     try {
+      // Fetchs the data using the fetch API
       const response = await fetch("/data/data.json");
+
+      // If the response is not ok, throw an error
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
 
+      // Parse the response data
       const data: Repository[] = await response.json();
+
+      // Set the repositories and filtered repositories state
       setRepositories(data);
       setFilteredRepositories(data);
     } catch (err: unknown) {
+      // If an error occurs, set the error state
       if (err instanceof Error) setError(err.message);
       else setError("Something went wrong!");
     } finally {
+      // Set loading to false
       setLoading(false);
     }
   };
 
+  /**
+   * Updates the filtered repositories based on the search input.
+   *
+   * @param {Repository[]} repositoriesArr - The filtered repositories array.
+   */
   const updateFilteredRepository = (repositoriesArr: Repository[]) => {
     setFilteredRepositories(repositoriesArr);
   };
 
+  // Fetch the data on component mount
   useEffect(() => {
     (async () => {
       fetchData();
@@ -57,7 +80,7 @@ const RepositoriesCard = () => {
         height: "100%",
         maxHeight: "95vh",
         border: { xs: 0, md: "1px solid #E9EAEB" },
-        overflow: 'hidden'
+        overflow: "hidden",
       }}
     >
       <Stack sx={{ height: "100%" }}>
@@ -113,11 +136,13 @@ const RepositoriesCard = () => {
           </Stack>
         </Stack>
         <Stack sx={{ flexGrow: 1, overflowY: "scroll" }}>
+          {/* Loading Spinner */}
           {loading && (
             <CircularProgress
               style={{ display: "block", margin: "auto auto" }}
             />
           )}
+          {/* Error Message */}
           {error && (
             <Typography
               variant="h2"
@@ -132,6 +157,7 @@ const RepositoriesCard = () => {
               {error}
             </Typography>
           )}
+          {/* Repositories List */}
           {filteredRepositories &&
             filteredRepositories.map((repository, idx) => (
               <RepositoryItem

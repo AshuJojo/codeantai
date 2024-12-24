@@ -16,6 +16,9 @@ import GithubLogo from "/src/assets/github-logo.svg?react";
 import GitlabLogo from "/src/assets/gitlab-logo.svg?react";
 import SSOLogo from "/src/assets/sso-logo.svg?react";
 
+/**
+ * button objects for sass sign-in options.
+ */
 const sassBtns = [
   {
     icon: <GithubLogo />,
@@ -35,6 +38,9 @@ const sassBtns = [
   },
 ];
 
+/**
+ * button objects for self-hosted sign-in options.
+ */
 const selfHostedBtns = [
   {
     icon: <GitlabLogo />,
@@ -46,10 +52,20 @@ const selfHostedBtns = [
   },
 ];
 
-const SignInCard = () => {
+/**
+ * SignInCard component renders the sign-in card layout.
+ * @component
+ * @returns {JSX.Element} The rendered sign-in card layout.
+ */
+const SignInCard = (): JSX.Element => {
   const [selectedTab, setSelectedTab] = useState<string>("sass");
   const navigate = useNavigate();
 
+  /**
+   * Handles the tab change event.
+   * @param {React.MouseEvent<HTMLElement>} event - The event object.
+   * @param {string | null} newTab - The new tab value.
+   */
   const handleTabChange = (
     event: React.MouseEvent<HTMLElement>,
     newTab: string | null
@@ -59,6 +75,10 @@ const SignInCard = () => {
     }
   };
 
+  /**
+   * Handles the sigin buttons click event.
+   * - Navigates to the dashboard page.
+   */
   const handleBtnClick = () => {
     navigate("/dashboard");
   };
@@ -72,7 +92,9 @@ const SignInCard = () => {
         minHeight: "30rem",
       }}
     >
+      {/* Content */}
       <Stack spacing={1.25} sx={{ px: "1.5rem", py: "2.25rem" }}>
+        {/* Header */}
         <Stack spacing={2.25}>
           <Box
             component="img"
@@ -83,6 +105,7 @@ const SignInCard = () => {
           <Typography variant="h1">Welcome to CodeAnt AI</Typography>
         </Stack>
 
+        {/* Tabs */}
         <ToggleButtonGroup
           value={selectedTab}
           exclusive
@@ -99,7 +122,10 @@ const SignInCard = () => {
         </ToggleButtonGroup>
       </Stack>
       <Divider />
+
+      {/* Signin Buttons */}
       <Stack spacing={1} sx={{ py: 3, px: 1, alignItems: "center" }}>
+        {/* Renders sass buttons options*/}
         {selectedTab === "sass" &&
           sassBtns.map((btn, idx) => (
             <Button
@@ -117,6 +143,7 @@ const SignInCard = () => {
               {btn.name}
             </Button>
           ))}
+        {/* Renders self-hosted buttons options*/}
         {selectedTab === "self-hosted" &&
           selfHostedBtns.map((btn, idx) => (
             <Button
