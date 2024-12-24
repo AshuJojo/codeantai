@@ -2,9 +2,15 @@ import { Box, Paper, Stack, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import SignInCard from "../components/SignInCard";
 
-const SignIn = () => {
+/**
+ * SignIn component renders the sign-in page layout.
+ * @component
+ * @returns {JSX.Element} The rendered sign-in page.
+ */
+const SignIn = (): JSX.Element => {
   return (
     <Grid container spacing={0}>
+      {/* Left Side Hero Section */}
       <Grid
         size={{ xs: 0, md: 6 }}
         sx={{
@@ -45,6 +51,8 @@ const SignIn = () => {
           />
         </Paper>
       </Grid>
+
+      {/* Right Side Sign In Card */}
       <Grid
         size={{ xs: 12, md: 6 }}
         sx={{

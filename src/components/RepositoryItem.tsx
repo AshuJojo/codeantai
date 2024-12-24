@@ -2,7 +2,7 @@ import { Chip, Stack, Typography, useTheme } from "@mui/material";
 import { formatDistance } from "date-fns";
 import { GoDotFill } from "react-icons/go";
 import { HiOutlineCircleStack } from "react-icons/hi2";
-import Repository from "../types/Respository";
+import Repository from "../types/Repository";
 
 interface RepositoryItemProps {
   repository: Repository;

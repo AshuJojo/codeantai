@@ -1,6 +1,6 @@
 import { SxProps, TextField, TextFieldProps } from "@mui/material";
 import { useEffect, useState } from "react";
-import Repository from "../types/Respository";
+import Repository from "../types/Repository";
 
 interface SearchInputProps {
   allRepositories: Repository[];

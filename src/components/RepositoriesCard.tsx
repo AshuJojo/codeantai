@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 import { IoAdd } from "react-icons/io5";
 import { LuRefreshCw } from "react-icons/lu";
-import Repository from "../types/Respository";
+import Repository from "../types/Repository";
 import RepositoryItem from "./RepositoryItem";
 import SearchInput from "./SearchInput";
 
