@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid2";
-import RepositoriesCard from "../components/RepositoriesCard";
 import Navbar from "../components/Navbar";
+import RepositoriesCard from "../components/RepositoriesCard";
 
 /**
  * Dashboard component renders the Dashboard page layout.

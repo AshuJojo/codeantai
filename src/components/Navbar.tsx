@@ -9,14 +9,14 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
+import { useState } from "react";
 import { BiBook, BiCloud, BiCodeAlt, BiHome } from "react-icons/bi";
 import { BsTelephone } from "react-icons/bs";
 import { FiLogOut } from "react-icons/fi";
 import { IoClose, IoSettingsOutline } from "react-icons/io5";
+import { RxHamburgerMenu } from "react-icons/rx";
 import { Link } from "react-router";
 import StyledMenuItem from "./StyledMenu";
-import { useState } from "react";
-import { RxHamburgerMenu } from "react-icons/rx";
 
 /**
  * Sidebar component that displays the Sidebar layout.
