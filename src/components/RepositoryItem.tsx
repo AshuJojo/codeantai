@@ -22,7 +22,10 @@ const RepositoryItem = ({ repository, isLast }: RepositoryItemProps) => {
   return (
     <Stack
       spacing={1.5}
-      sx={{ p: 3, borderBottom: isLast ? "" : "1px solid #D5D7DA" }}
+      sx={{
+        p: { xs: 2, md: 3 },
+        borderBottom: isLast ? "" : "1px solid #D5D7DA",
+      }}
     >
       <Stack direction="row" spacing={1} sx={{ alignItems: "center" }}>
         <Typography variant="subtitle2">{repository.repositoryName}</Typography>
@@ -33,7 +36,7 @@ const RepositoryItem = ({ repository, isLast }: RepositoryItemProps) => {
           label={repository.visibility}
         />
       </Stack>
-      <Stack direction="row" spacing={5}>
+      <Stack direction="row" spacing={{xs: 3,md: 5}}>
         <Typography>
           {repository.language}{" "}
           <GoDotFill

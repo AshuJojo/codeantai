@@ -21,7 +21,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 const Sidebar = () => {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
-  const [menuOpen, setMenuOpen] = useState<boolean>(true);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const handleToggleMenu = () => {
     setMenuOpen(!menuOpen);

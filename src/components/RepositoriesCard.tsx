@@ -62,15 +62,22 @@ const RepositoriesCard = () => {
       <Stack sx={{ height: "100%" }}>
         {/* Content */}
         <Stack sx={{ borderBottom: "1px solid #E9EAEB" }}>
-          <Stack spacing={2.5} sx={{ px: 3, py: 2.5 }}>
+          <Stack spacing={2.5} sx={{ px: { xs: 2, md: 3 }, py: 2.5 }}>
             {/* Header */}
             <Stack
               component="header"
-              direction="row"
+              spacing={{ xs: 1.5 }}
+              direction={{ xs: "column", md: "row" }}
               sx={{ justifyContent: "space-between" }}
             >
-              <Stack direction="column" sx={{ width: "fit-content" }}>
-                <Typography variant="h2">Repositories</Typography>
+              <Stack
+                direction="column"
+                spacing={{ xs: 0.5 }}
+                sx={{ width: "fit-content" }}
+              >
+                <Typography variant="h2" sx={{ lineHeight: { xs: 1, md: 2 } }}>
+                  Repositories
+                </Typography>
                 <Typography variant="caption">33 total repositories</Typography>
               </Stack>
               <Stack direction="row" spacing={1.5}>
