@@ -1,6 +1,29 @@
-import { alpha, createTheme, responsiveFontSizes } from "@mui/material/styles";
+/**
+ * This module defines and exports a Material-UI theme with custom configurations.
+ * The theme includes custom palette colors, component style overrides, typography settings,
+ * and breakpoint values.
+ *
+ * @module theme
+ */
 
-const theme = createTheme({
+import {
+  alpha,
+  createTheme,
+  responsiveFontSizes,
+  Theme,
+} from "@mui/material/styles";
+
+/**
+ * Creates a custom Material-UI theme with the following configurations:
+ * - Palette: Defines primary and secondary colors with different shades and contrast text colors.
+ * - Components: Customizes the styles and default properties for various Material-UI components such as MuiPaper, MuiToggleButtonGroup, MuiToggleButton, MuiButton, and MuiChip.
+ * - Typography: Sets custom font family, font sizes, line heights, font weights, and text alignment for different text variants.
+ * - Breakpoints: Defines custom breakpoint values for responsive design.
+ *
+ * @returns {Theme} The customized Material-UI theme with responsive font sizes.
+ */
+const theme: Theme = createTheme({
+  // Custom palette colors
   palette: {
     primary: {
       dark: "#175CD3",
@@ -13,7 +36,9 @@ const theme = createTheme({
       contrastText: "#171717",
     },
   },
+  // Custom component styles and default properties
   components: {
+    // MuiPaper component
     MuiPaper: {
       defaultProps: {
         elevation: 0,
@@ -26,6 +51,7 @@ const theme = createTheme({
         },
       },
     },
+    //  MuiToggleButtonGroup component
     MuiToggleButtonGroup: {
       styleOverrides: {
         root: {
@@ -34,6 +60,7 @@ const theme = createTheme({
         },
       },
     },
+    // MuiToggleButton component
     MuiToggleButton: {
       styleOverrides: {
         root: ({ theme }) => ({
@@ -53,6 +80,7 @@ const theme = createTheme({
         }),
       },
     },
+    // MuiButton component
     MuiButton: {
       defaultProps: {
         variant: "contained",
@@ -83,6 +111,7 @@ const theme = createTheme({
         },
       },
     },
+    //  MuiChip component
     MuiChip: {
       defaultProps: {
         variant: "outlined",
@@ -104,6 +133,7 @@ const theme = createTheme({
       },
     },
   },
+  // Custom typography settings
   typography: {
     allVariants: {
       fontFamily: "Inter, sans-serif",
@@ -141,6 +171,7 @@ const theme = createTheme({
       textAlign: "start",
     },
   },
+  // Custom breakpoint values
   breakpoints: {
     values: {
       xs: 0,
@@ -152,4 +183,5 @@ const theme = createTheme({
   },
 });
 
+// Export the customized Material-UI theme with responsive font sizes
 export default responsiveFontSizes(theme);
